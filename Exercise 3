@@ -1,0 +1,46 @@
+var tileContaner  = document.getElementsByClassName("slick-track")[0];
+var getTile = document.getElementsByClassName("cat-tile")[4];
+var clnTile = getTile.cloneNode(true);
+tileContaner.insertBefore(clnTile, document.getElementsByClassName("cat-tile")[1]);
+document.getElementsByClassName("cat-tile")[5].remove();
+
+var franContaner  = document.getElementsByClassName("cat-off-screen-pane")[0];
+var getFranData = document.getElementsByClassName("fran")[3];
+var clnFranData = getFranData.cloneNode(true);
+franContaner.insertBefore(clnFranData, document.getElementsByClassName("fran")[0]);
+
+document.getElementsByClassName("fran")[0].getElementsByTagName("img")[0].src = "//i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/page/campaign/26214/26214-notebook-alienware-m15-169x149.png?fmt=jpg&amp;wid=124";
+document.getElementsByClassName("fran")[0].getElementsByTagName("img")[1].src = "//i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/page/campaign/26214/26214-notebook-alienware-m15-169x149.png?fmt=jpg&amp;wid=124";
+document.getElementsByClassName("fran")[0].getElementsByTagName("img")[2].src = "//i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/page/campaign/26214/26214-notebook-alienware-m15-169x149.png?fmt=jpg&amp;wid=124";
+
+var getNav = document.getElementsByClassName("anav")[0].getElementsByTagName("ul")[0];
+document.getElementsByClassName("anav")[0].getElementsByTagName("li")[0].setAttribute("id", "dynamicID");
+var newLI = document.createElement('li');
+newLI.setAttribute("id", "newDynamicLiId");
+getNav.insertBefore(newLI, document.getElementById("dynamicID"));
+
+priceArray = ["Under $500", "$500 - $800", "$800+"];
+document.getElementById("newDynamicLiId").innerHTML = '<h5><a><span>Price</span><span class="anav-icon anav-expand"></span></a></h5><ul>' + priceArray.map(function (priceArray) {
+return '<li> <input type="checkbox" onclick="checkBoxClick()" ><label> '+ priceArray + '</label></li>';
+}).join('') + '</ul>';
+
+var getCheckBox00 = document.getElementById("newDynamicLiId").getElementsByTagName("li")[0].getElementsByTagName("input")[0];
+var getCheckBox01 = document.getElementById("newDynamicLiId").getElementsByTagName("li")[1].getElementsByTagName("input")[0];
+var getCheckBox02 = document.getElementById("newDynamicLiId").getElementsByTagName("li")[2].getElementsByTagName("input")[0];
+
+var gerSeries = document.getElementsByClassName("fran")[0].getElementsByTagName("div")[2];
+function checkBoxClick(){
+if (getCheckBox00.checked === true){
+  gerSeries.style.display = "none";
+} else if (getCheckBox01.checked === true) {
+  gerSeries.style.display = "none";
+} else if (getCheckBox02.checked === true) {
+  gerSeries.style = "";
+} else if (getCheckBox02.checked === true && getCheckBox00.checked === true) {
+  gerSeries.style = " ";
+} else if (getCheckBox02.checked === true && getCheckBox01.checked === true) {
+  gerSeries.style = " ";
+ } else {
+   gerSeries.style = " ";
+ }
+}
