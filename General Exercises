@@ -21,3 +21,13 @@ $(document).ready(function() {
 
 
 4. Why does the alert show "Jack" first and then undefined?
+function identity() {
+	var name = 'Jack';
+	alert(name);
+	return
+	name
+};
+JavaScript is always synchronous and single-threaded. 
+So, it will render line by line as the second statement is alert it will show first and in JavaScript every statement will take semicolon. 
+That’s why in alerted undefined. Return should be in single line it will alert the "Jack".
+    
