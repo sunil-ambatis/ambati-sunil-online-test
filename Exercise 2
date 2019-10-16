@@ -1,0 +1,22 @@
+$("#message-bar").hide();
+$(".breadcrumbs").hide();
+$(".accessories-spacer:nth-child(2)").hide();
+$("ul.slides li:nth-child(4)").hide();
+$("ul.slides li:nth-child(5)").hide();
+$(".top-offset-20 div.row:first-child()").hide();
+$("ul.slides li:nth-child(2) article").attr("style","display: none !important");
+$("ul.slides li:nth-child(3) article").attr("style","display: none !important");
+
+$(".inner-module-banner").attr("style","top: 240px!important");
+$(".img-responsive").attr("style","width: auto !important; display: initial !important");
+$(".top-offset-20 div.row:nth-child(17)").clone().appendTo("ul.slides li:nth-child(2)");
+$("ul.slides li:nth-child(2) .gray-light img").attr('src', '//i.dell.com/sites/imagecontent/app-merchandizing/responsive/Shop/SnP/Home/en/PublishingImages/25662-ena-thermostat-nest-a9731361-camera-arlo-vmc4030-a9410493-router-linksys-ea8300-ac2200-a9726810-555x430.png');
+$(".top-offset-20 div.row:nth-child(27)").clone().appendTo("ul.slides li:nth-child(3)");
+$(".flex-control-nav li:last-child()").hide();
+$("ul.slides li:nth-child(2) .gray-light").attr("style","background-color: #81007f !important");
+$("ul.slides li:nth-child(3) .half-image-module").attr("style","background-color: #008001 !important");
+
+// Flexslider plugin used for the slider animation not controlling in console, If we want to stop autopaly, We need to use below code.
+$("div.flexslider.home").flexslider({
+  slideshow: "false"
+});
