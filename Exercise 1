@@ -1,0 +1,40 @@
+var contanerRow  = document.getElementsByClassName("row")[8];
+var getContainer = document.getElementsByClassName("resource-tiles")[0];
+var clnTile = getContainer.cloneNode(true);
+contanerRow.insertBefore(clnTile, document.getElementsByClassName("col-lg-8")[0]);
+
+var mainContainer = document.getElementsByClassName("col-lg-8")[0];
+var getMainDiv = document.getElementsByClassName("resource-tiles")[0];
+
+function myFunction(x) {
+  if (x.matches) {
+    mainContainer.style = "";
+    getMainDiv.style = "";
+
+    document.getElementsByClassName("col-sm-6")[0].classList.add("col-md-3");
+    document.getElementsByClassName("col-sm-6")[1].classList.add("col-md-3");
+    document.getElementsByClassName("col-sm-6")[2].classList.add("col-md-3");
+    document.getElementsByClassName("col-sm-6")[3].classList.add("col-md-3");
+
+    document.getElementsByClassName("resource-tiles")[1].style.display = "block";
+    document.getElementsByClassName("resource-tiles")[0].style.display = "none";
+
+  } else {
+    mainContainer.style.width = "50%"
+    mainContainer.style.marginLeft = "0%"
+    mainContainer.style.marginTop = "-65px"
+    getMainDiv.style.width = "50%"
+    getMainDiv.style.float = "left";
+
+    document.getElementsByClassName("col-sm-6")[0].classList.remove("col-md-3");
+    document.getElementsByClassName("col-sm-6")[1].classList.remove("col-md-3");
+    document.getElementsByClassName("col-sm-6")[2].classList.remove("col-md-3");
+    document.getElementsByClassName("col-sm-6")[3].classList.remove("col-md-3");
+
+    document.getElementsByClassName("resource-tiles")[1].style.display = "none";
+    document.getElementsByClassName("resource-tiles")[0].style.display = "block";
+  }
+}
+var x = window.matchMedia("(max-width: 992px)");
+myFunction(x);
+x.addListener(myFunction);
